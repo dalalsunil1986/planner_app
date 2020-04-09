@@ -62,16 +62,19 @@ shape: CircleBorder(),
 fillColor: Colors.teal[300],
 padding: EdgeInsets.all(10),
 ),
+SizedBox(width: 10.0),
 Column(
 children: <Widget>[
-Text('Good morning!',
-style: TextStyle(
-fontWeight: FontWeight.bold,
-letterSpacing: 0.2
-)),
 Padding(
-padding: const EdgeInsets.fromLTRB(10,0,20,0),
-child: FlatButton(
+  padding: const EdgeInsets.only(left: 8.0),
+  child:   Text('Good morning!',
+  style: TextStyle(
+  fontWeight: FontWeight.bold,
+  letterSpacing: 0.2
+  )),
+),
+SizedBox(height: 5.0,),
+FlatButton(
 shape: RoundedRectangleBorder(
 borderRadius: BorderRadius.circular(20),
 ),
@@ -81,7 +84,6 @@ child: Text('Search',
 style: TextStyle(
 color: Colors.white
 ),)),
-),
 ],
 )
 ],
@@ -256,39 +258,109 @@ Text('Back'),
                   Container(
                     height: _height * 0.5,
                     width: _width,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            RawMaterialButton(
-                              padding: EdgeInsets.all(20.0),
-                              fillColor: Theme.of(context).cardColor,
-                              shape: CircleBorder(),
-                              child: Icon(FontAwesome5Solid.temperature_high),
-                            ),
-                            RawMaterialButton(
-                              padding: EdgeInsets.all(20.0),
-                              fillColor: Theme.of(context).cardColor,
-                              shape: CircleBorder(),
-                                child: Icon(MaterialCommunityIcons.calendar),
-                            ),
-                            RawMaterialButton(
-                              padding: EdgeInsets.all(25.0),
-                              fillColor: Theme.of(context).cardColor,
-                              shape: CircleBorder(),
-                              child: Icon(Ionicons.md_musical_note),
-                            ),
-                            RawMaterialButton(
-                              padding: EdgeInsets.all(25.0),
-                              fillColor: Theme.of(context).cardColor,
-                              shape: CircleBorder(),
-                              child: Icon(MaterialCommunityIcons.file_document_box_outline),
-                            ),
-                          ],
-                        ),
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              RawMaterialButton(
+                                padding: EdgeInsets.all(20.0),
+                                onPressed: () {},
+                                fillColor: Theme.of(context).cardColor,
+                                shape: CircleBorder(),
+                                child: Icon(FontAwesome5Solid.temperature_high, color: Colors.greenAccent[700]),
+                              ),
+                              RawMaterialButton(
+                                padding: EdgeInsets.all(20.0),
+                                onPressed: () {},
+                                fillColor: Theme.of(context).cardColor,
+                                shape: CircleBorder(),
+                                  child: Icon(MaterialCommunityIcons.calendar, color: Colors.teal[600]),
+                              ),
+                              RawMaterialButton(
+                                padding: EdgeInsets.all(25.0),
+                                onPressed: () {},
+                                fillColor: Theme.of(context).cardColor,
+                                shape: CircleBorder(),
+                                child: Icon(Ionicons.md_musical_note, color: Colors.orange[600]),
+                              ),
+                              RawMaterialButton(
+                                padding: EdgeInsets.all(25.0),
+                                onPressed: () {},
+                                fillColor: Theme.of(context).cardColor,
+                                shape: CircleBorder(),
+                                child: Icon(MaterialCommunityIcons.file_document_box_outline, color: Colors.purple),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: _height * 0.04,),
+                          Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                      Text('Tuesday, Jan 30',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                      SizedBox(height: 15.0),
+                      Text('The time is 11:00AM and you have 71% battery left. Todays \nhigh temperature is going to be 44 with a low of 25.',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                      ),),
+                      SizedBox(height: _height * 0.08,),
+                      Row(
+                        children: <Widget>[
+                          Padding(
+padding: const EdgeInsets.fromLTRB(10,0,20,0),
+child: FlatButton(
+shape: RoundedRectangleBorder(
+borderRadius: BorderRadius.circular(20),
+),
+color: Colors.blue,
+onPressed: () {},
+child: Text('CALL',
+style: TextStyle(
+color: Colors.white,
+fontWeight: FontWeight.bold
+),)),
+),
+Padding(
+padding: const EdgeInsets.fromLTRB(10,0,20,0),
+child: FlatButton(
+shape: RoundedRectangleBorder(
+borderRadius: BorderRadius.circular(20),
+),
+onPressed: () {},
+child: Text('TEXT',
+style: TextStyle(
+fontWeight: FontWeight.bold
+),)),
+),
+Padding(
+padding: const EdgeInsets.fromLTRB(10,0,20,0),
+child: FlatButton(
+shape: RoundedRectangleBorder(
+borderRadius: BorderRadius.circular(20),
+),
+onPressed: () {},
+child: Text('EMAIL',
+style: TextStyle(
+fontWeight: FontWeight.bold
+),)),
+),
+                        ],
+                      ),
+                  ],
+                ),
+               ),
+                        ],
+                      ),
                     ),
                     ),
                   Positioned(
@@ -346,6 +418,7 @@ Text('Back'),
                 ],
                 overflow: Overflow.visible,
               ),
+              
             ],
           ),
         ),
